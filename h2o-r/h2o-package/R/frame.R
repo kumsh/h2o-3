@@ -1567,6 +1567,32 @@ h2o.which <- function(x) {
   else .newExpr("which",x) + 1
 }
 
+#' Which indice contains the max value?
+#'
+#' Get the index of the max value in a column or row
+#'
+#' @param x An H2OFrame object.
+#' @return Returns an H2OFrame object.
+#' @seealso \code{\link[base]{which.max}} for the base R method.
+#' @export
+h2o.which_max <- function(x) {
+  if( !is.H2OFrame(x) ) stop("must be an H2OFrame")
+  else .newExpr("which.max",x) + 1
+}
+
+#' Which index contains the min value?
+#'
+#' Get the index of the min value in a column or row
+#'
+#' @param x An H2OFrame object.
+#' @return Returns an H2OFrame object.
+#' @seealso \code{\link[base]{which.min}} for the base R method.
+#' @export
+h2o.which_min <- function(x) {
+  if( !is.H2OFrame(x) ) stop("must be an H2OFrame")
+  else .newExpr("which.min",x) + 1
+}
+
 #' Count of NAs per column
 #'
 #' Gives the count of NAs per column.
